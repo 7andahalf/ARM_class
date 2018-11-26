@@ -1,0 +1,58 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;PRESERVE8
+    2 00000000         ;thumb
+    3 00000000                 area             appcode, CODE, READONLY
+    4 00000000                 export           __main
+    5 00000000                 ENTRY
+    6 00000000         __main  function
+    7 00000000 4805            LDR              r0, =0xE000ED88 
+                                                            ; Read-modify-write
+                                                            
+    8 00000002 6801            LDR              r1, [r0]
+    9 00000004         ;MOV r1, 0x5555
+   10 00000004 F441 0170       ORR              r1, r1, #(0xF << 20) 
+                                                            ; Enable CP10, CP11
+                                                            
+   11 00000008 6001            STR              r1, [r0]
+   12 0000000A EEB7 0A00       VMOV.F           s0, #0x3F800000 ; single-precis
+                                                            ion 1.0
+   13 0000000E EEF0 0A40       VMOV.F           s1, s0
+   14 00000012 EE30 1A80       VADD.F           s2, s1, s0  ; 1.0 + 1.0 = ??
+   15 00000016                 endfunc
+   16 00000016                 end
+              00 00 E000ED88 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\final.d -o.\objects\final.o -I"D:\ARM simulator\KIEL\
+FLoating_point\RTE" -Id:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include -
+Id:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\Device\ARM\ARMCM4\Include --predefin
+e="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 520" --predefine="_RTE_ S
+ETA 1" --predefine="ARMCM4_FP SETA 1" --list=.\listings\final.lst final.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 6 in file final.s
+   Uses
+      At line 4 in file final.s
+Comment: __main used once
+appcode 00000000
+
+Symbol: appcode
+   Definitions
+      At line 3 in file final.s
+   Uses
+      None
+Comment: appcode unused
+2 symbols
+339 symbols in table

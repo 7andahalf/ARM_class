@@ -1,0 +1,12 @@
+Dependencies for Project 'asm3', Target 'Target 1': (DO NOT MODIFY !)
+F (.\floating_point.s)(0x57F124A3)(--cpu Cortex-M4.fp --li --pd "__EVAL SETA 1" -g --apcs=interwork -I "D:\ARM simulator\KIEL\FLoating_point\RTE"-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\Device\ARM\ARMCM4\Include--pd "__UVISION_VERSION SETA 520" --pd "_RTE_ SETA 1" --pd "ARMCM4_FP SETA 1"--list .\listings\floating_point.lst --xref -o .\objects\floating_point.o --depend .\objects\floating_point.d)
+F (RTE\Device\ARMCM4_FP\startup_ARMCM4.s)(0x50B2EF74)(--cpu Cortex-M4.fp --li --pd "__EVAL SETA 1" -g --apcs=interwork -I "D:\ARM simulator\KIEL\FLoating_point\RTE"-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\Device\ARM\ARMCM4\Include--pd "__UVISION_VERSION SETA 520" --pd "_RTE_ SETA 1" --pd "ARMCM4_FP SETA 1"--list .\listings\startup_armcm4.lst --xref -o .\objects\startup_armcm4.o --depend .\objects\startup_armcm4.d)
+F (RTE\Device\ARMCM4_FP\system_ARMCM4.c)(0x55D44230)(-c --cpu Cortex-M4.fp -D__EVAL --li -g -O0 --apcs=interwork --split_sections-I "D:\ARM simulator\KIEL\FLoating_point\RTE"-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-I d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\Device\ARM\ARMCM4\Include-D__UVISION_VERSION="520" -D_RTE_ -DARMCM4_FP-o .\objects\system_armcm4.o --omf_browse .\objects\system_armcm4.crf --depend .\objects\system_armcm4.d)
+I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\Device\ARM\ARMCM4\Include\ARMCM4_FP.h)(0x573551D0)
+I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cm4.h)(0x5735B8C6)
+I (d:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE6606)
+I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cminstr.h)(0x573551CE)
+I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\cmsis_armcc.h)(0x573551CE)
+I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmfunc.h)(0x573551CE)
+I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmsimd.h)(0x573551CE)
+I (d:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\Device\ARM\ARMCM4\Include\system_ARMCM4.h)(0x573551D0)
