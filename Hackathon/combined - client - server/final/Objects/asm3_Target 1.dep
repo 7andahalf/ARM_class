@@ -1,0 +1,12 @@
+Dependencies for Project 'asm3', Target 'Target 1': (DO NOT MODIFY !)
+F (.\final.s)(0x5BFC0050)(--cpu Cortex-M4.fp --li --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\ARM\ARMCM4\Include--pd "__UVISION_VERSION SETA 525" --pd "_RTE_ SETA 1" --pd "ARMCM4_FP SETA 1"--list .\listings\final.lst --xref -o .\objects\final.o --depend .\objects\final.d)
+F (RTE\Device\ARMCM4_FP\startup_ARMCM4.s)(0x50B2EF74)(--cpu Cortex-M4.fp --li --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\ARM\ARMCM4\Include--pd "__UVISION_VERSION SETA 525" --pd "_RTE_ SETA 1" --pd "ARMCM4_FP SETA 1"--list .\listings\startup_armcm4.lst --xref -o .\objects\startup_armcm4.o --depend .\objects\startup_armcm4.d)
+F (RTE\Device\ARMCM4_FP\system_ARMCM4.c)(0x55D44230)(-c --cpu Cortex-M4.fp -D__EVAL --li -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\ARM\ARMCM4\Include-D__UVISION_VERSION="525" -D_RTE_ -DARMCM4_FP-o .\objects\system_armcm4.o --omf_browse .\objects\system_armcm4.crf --depend .\objects\system_armcm4.d)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\ARM\ARMCM4\Include\ARMCM4_FP.h)(0x5A8E430A)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\core_cm4.h)(0x5A8E430A)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EF056)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_version.h)(0x5A55B90A)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_compiler.h)(0x5A8E430A)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\cmsis_armcc.h)(0x5A8E430A)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include\mpu_armv7.h)(0x5A8E430A)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\ARM\ARMCM4\Include\system_ARMCM4.h)(0x5A8E430A)

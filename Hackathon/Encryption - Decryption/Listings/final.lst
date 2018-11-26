@@ -1,0 +1,138 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; INPUT:  R10 start of array 
+    2 00000000         ;   R11 length of array
+    3 00000000         ; OUTPUT: R0 or R1
+    4 00000000         
+    5 00000000                 AREA             appcode, CODE, READONLY
+    6 00000000                 EXPORT           __main
+    7 00000000                 ENTRY
+    8 00000000         
+    9 00000000         
+   10 00000000         __main  FUNCTION
+   11 00000000 F44F 7A7A       MOV              r10, #1000  ;input A
+   12 00000004 F44F 6B80       MOV              r11, #1024  ;input B
+   13 00000008         
+   14 00000008         ;;;;;;;;;; ENCRYPTION
+   15 00000008         
+   16 00000008 F04F 3811       MOV              r8, #0x11111111 ; init
+   17 0000000C         
+   18 0000000C F04F 0702       MOV              r7, #0x00000002 ; in
+   19 00000010 F000 F81A       BL               e_proc
+   20 00000014 4630            MOV              r0, r6      ;
+   21 00000016         
+   22 00000016 F04F 0703       MOV              r7, #0x00000003 ; in
+   23 0000001A F000 F815       BL               e_proc
+   24 0000001E 4631            MOV              r1, r6      ;
+   25 00000020         
+   26 00000020 F04F 0704       MOV              r7, #0x00000004 ; in
+   27 00000024 F000 F810       BL               e_proc
+   28 00000028 4632            MOV              r2, r6      ;
+   29 0000002A         
+   30 0000002A         ;;;;;;;;;;;;; DECRYPTION
+   31 0000002A         
+   32 0000002A F04F 3811       MOV              r8, #0x11111111 ; init
+   33 0000002E         
+   34 0000002E 4607            MOV              r7, r0      ;
+   35 00000030 F000 F810       BL               d_proc
+   36 00000034 4630            MOV              r0, r6      ;
+   37 00000036         
+   38 00000036 460F            MOV              r7, r1      ;
+   39 00000038 F000 F80C       BL               d_proc
+   40 0000003C 4631            MOV              r1, r6      ;
+   41 0000003E         
+   42 0000003E 4617            MOV              r7, r2      ;
+   43 00000040 F000 F808       BL               d_proc
+   44 00000044 4632            MOV              r2, r6      ;
+   45 00000046         
+   46 00000046 E7FE    stop    B                stop        ; stop program
+   47 00000048                 ENDFUNC
+   48 00000048         
+   49 00000048         
+   50 00000048         ; R8 = IV
+   51 00000048         ; R7 = Input
+   52 00000048         ; R6 = Output
+   53 00000048 EA87 0608 
+                       e_proc  EOR              r6, r7, r8
+   54 0000004C EA4F 2636       ROR              r6, #8      ; CBC
+   55 00000050 46B0            MOV              r8, r6      ; update IV
+   56 00000052 4770            BX               lr
+   57 00000054         
+   58 00000054         ; R8 = IV
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   59 00000054         ; R7 = Input
+   60 00000054         ; R6 = Output
+   61 00000054 4646    d_proc  MOV              r6, r8      ; update IV
+   62 00000056 46B8            MOV              r8, r7
+   63 00000058 EA4F 6737       ROR              r7, #24
+   64 0000005C EA86 0607       EOR              r6, r6, r7  ; CBC 
+   65 00000060 4770            BX               lr
+   66 00000062         
+   67 00000062                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\final.d -o.\objects\final.o -I.\RTE\_Target_1 -ID:\Ke
+il_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include -ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.
+3.0\Device\ARM\ARMCM4\Include --predefine="__EVAL SETA 1" --predefine="__UVISIO
+N_VERSION SETA 525" --predefine="_RTE_ SETA 1" --predefine="ARMCM4_FP SETA 1" -
+-list=.\listings\final.lst final.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 10 in file final.s
+   Uses
+      At line 6 in file final.s
+Comment: __main used once
+appcode 00000000
+
+Symbol: appcode
+   Definitions
+      At line 5 in file final.s
+   Uses
+      None
+Comment: appcode unused
+d_proc 00000054
+
+Symbol: d_proc
+   Definitions
+      At line 61 in file final.s
+   Uses
+      At line 35 in file final.s
+      At line 39 in file final.s
+      At line 43 in file final.s
+
+e_proc 00000048
+
+Symbol: e_proc
+   Definitions
+      At line 53 in file final.s
+   Uses
+      At line 19 in file final.s
+      At line 23 in file final.s
+      At line 27 in file final.s
+
+stop 00000046
+
+Symbol: stop
+   Definitions
+      At line 46 in file final.s
+   Uses
+      At line 46 in file final.s
+Comment: stop used once
+5 symbols
+340 symbols in table
