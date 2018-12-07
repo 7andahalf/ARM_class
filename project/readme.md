@@ -11,9 +11,11 @@ VGA is a very widely used protocol for display. It is an analog protocol i.e. th
 ## Hardware
 
 ![STMF4 discovery](images/disc.jpg)
+
 The board used is STMF4 Discovery.
 
 ![STMF4 discovery](images/dac.png)
+
 In order to generate the analog signals, a simple resister based DAC was used, as shown in the above image. Instead of 4bit R,G & B only two bits were used for each color
 
 The following pin configuration was followed for the board. In total 8 GPIO pins were used.
@@ -22,6 +24,8 @@ The following pin configuration was followed for the board. In total 8 GPIO pins
 * R0, R1: PD10, PD11
 * G0, G1: PD12, PD13
 * B0, B1: PD14, PD15
+
+![STMF4 discovery](images/setup.jpg)
 
 ## Procedure
 * Firstly the clock was increased to 168 MHz.
